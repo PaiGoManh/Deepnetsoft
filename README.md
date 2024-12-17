@@ -27,7 +27,7 @@ run the backend by using
 npm run dev
 ```
 
-also need to add you .env with backend setup MONGO_URI=mongodb+srv://<username>:<password>@deepnetsoft.vztpy.mongodb.net/?retryWrites=true&w=majority&appName=Deepnetsoft , 
+also need to add .env with backend setup MONGO_URI=mongodb+srv://<username>:<password>@deepnetsoft.vztpy.mongodb.net/?retryWrites=true&w=majority&appName=Deepnetsoft , 
 add your username and password of mongo atlas 
 
 then run the project you can add Foods,Drinks,Bunches when clicking the buttons of each 
