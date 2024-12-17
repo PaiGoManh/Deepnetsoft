@@ -13,7 +13,12 @@ const drinkRoutes = require('./Routes/drinkRoutes')
 
 const app = express();
 
-app.use(cors());
+app.use(
+    cors({
+      origin: ['https://deepnetsoft-assesment-two.vercel.app'], 
+    })
+  );
+
 app.use(bodyParser.json());
 
 app.use('/foods', foodRoutes);
