@@ -16,7 +16,7 @@ const FoodCard = () => {
 
     const fetchMenuItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/foods');
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/foods`);
             const data = await response.json();
             setMenuItems(data);
         } catch (error) {
@@ -40,7 +40,7 @@ const FoodCard = () => {
         e.preventDefault();
         const descriptionArray = newFood.description.split(',').map(desc => desc.trim());
         try {
-            await fetch('http://localhost:5000/foods', {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/foods`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const FoodCard = () => {
 
     const deleteFood = async (id) => {
         try {
-            await fetch(`http://localhost:5000/foods/${id}`, {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/foods/${id}`, {
                 method: 'DELETE',
             });
             fetchMenuItems();
@@ -76,9 +76,8 @@ const FoodCard = () => {
 
     const updateFood = async (e) => {
         e.preventDefault();
-        const descriptionArray = selectedFood.description.split(',').map(desc => desc.trim());
         try {
-            await fetch(`http://localhost:5000/foods/${selectedFood._id}`, {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/foods/${selectedFood._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -100,7 +99,7 @@ const FoodCard = () => {
             className="md:relative md:h-[650px] h-[510px] md:bg-cover md:bg-center md:px-[10%] px-[6%] pt-[4%] md:pt-[5%] "
             style={{ backgroundImage: `url(${bgImage})` }}
         >
-            <div className="md:w-[1000px] w-[330px] h-[480px] md:h-[500px] border-2 border-white text-white bg-black">
+            <div className="md:w-[1000px] w-[330px] h-[480px] md:h-[500px] border-2 border-white text-white bg-black ">
                 <div className="md:text-2xl font-bold md:pt-5 pt-3 pb-3 md:pb-0 pb- text-center">
                     FOODS WE OFFER
                 </div>
