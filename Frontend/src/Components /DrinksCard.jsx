@@ -96,7 +96,7 @@ const DrinksCard = () => {
 
     return (
         <div
-        className="md:relative md:h-[650px] h-[510px] md:bg-cover md:bg-center md:px-[10%] px-[2%] pt-[4%] md:pt-[5%] "
+        className="md:relative md:h-[650px] h-[510px] md:bg-cover md:bg-center md:px-[10%] px-[6%] pt-[4%] md:pt-[5%] "
         style={{ backgroundImage: `url(${bgImage})` }}
         >
             <div className="md:w-[1000px] w-[330px] h-[480px] md:h-[500px] border-2 border-white text-white bg-black">
