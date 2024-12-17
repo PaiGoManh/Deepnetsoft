@@ -16,7 +16,7 @@ const BunchCard = () => {
 
     const fetchMenuItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/bunch');
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/bunch`);
             const data = await response.json();
             setMenuItems(data);
         } catch (error) {
@@ -39,7 +39,7 @@ const BunchCard = () => {
     const addNewBunch = async (e) => {
         e.preventDefault();
         try {
-            await fetch('http://localhost:5000/bunch', {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/bunch`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const BunchCard = () => {
 
     const deleteFood = async (id) => {
         try {
-            await fetch(`http://localhost:5000/bunch/${id}`, {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/bunch/${id}`, {
                 method: 'DELETE',
             });
             fetchMenuItems();
@@ -76,7 +76,7 @@ const BunchCard = () => {
     const updateFood = async (e) => {
         e.preventDefault();
         try {
-            await fetch(`http://localhost:5000/bunch/${selectedBunch._id}`, {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/bunch/${selectedBunch._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
