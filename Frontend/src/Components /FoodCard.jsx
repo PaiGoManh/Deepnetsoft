@@ -226,8 +226,8 @@ const FoodCard = () => {
             )}
 
             {isEditModalOpen && selectedFood && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center md:mx-0 px-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
                         <h2 className="text-2xl font-bold mb-4">Edit Food</h2>
                         <form className="w-full" onSubmit={updateFood}>
                             <div className="relative z-0 w-full mb-5 group">

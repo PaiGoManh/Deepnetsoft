@@ -95,14 +95,14 @@ const BunchCard = () => {
 
     return (
         <div
-            className="relative h-[1000px] bg-cover bg-center px-[8%] pt-[8%]"
-            style={{ backgroundImage: `url(${bgImage})` }}
+        className="md:relative md:h-[650px] h-[510px] md:bg-cover md:bg-center md:px-[10%] px-[2%] pt-[4%] md:pt-[5%] "
+        style={{ backgroundImage: `url(${bgImage})` }}
         >
-            <div className="w-[1500px] h-[700px] border-2 border-white text-white bg-black">
-                <div className="text-3xl font-bold pt-4 text-center">
+            <div className="md:w-[1000px] w-[330px] h-[480px] md:h-[500px] border-2 border-white text-white bg-black">
+                <div className="md:text-2xl font-bold md:pt-5 pt-3 pb-3 md:pb-0 pb- text-center">
                     BUNCH WE GIVES
                 </div>
-                <div className="px-[5%] pt-[5%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="md:px-[5%] md:pt-[5%] pt-[3%] px-[5%] gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
                     {menuItems.map((item) => (
                         <div
                             key={item._id}
@@ -131,7 +131,7 @@ const BunchCard = () => {
                         </div>
                     ))}
                 </div>
-                <div className='bg-black border border-gray-700 rounded-lg text-white w-[430px] h-[120px] ml-[5%] mt-5 text-center py-[2%]'>
+                <div className='bg-black border border-gray-700 rounded-lg text-white md:w-[280px] md:h-[120px] w-[295px] h-[100px] md:ml-[5%] ml-4 mt-5 md:mt-5 text-center md:py-[2%] py-[2%]'>
                     <button
                         onClick={() => setIsModalOpen(true)}
                         className="text-5xl text-white hover:text-yellow-500 "
@@ -142,8 +142,8 @@ const BunchCard = () => {
             </div>
 
             {isModalOpen && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center md:mx-0 px-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
                         <h2 className="text-2xl font-bold mb-4">Add New Bunch</h2>
                         <form className="w-full" onSubmit={addNewBunch}>
                             <div className="relative z-0 w-full mb-5 group">
@@ -224,8 +224,8 @@ const BunchCard = () => {
             )}
 
             {isEditModalOpen && selectedBunch && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center md:mx-0 px-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
                         <h2 className="text-2xl font-bold mb-4">Edit Bunch</h2>
                         <form className="w-full" onSubmit={updateFood}>
                             <div className="relative z-0 w-full mb-5 group">
