@@ -16,7 +16,7 @@ const DrinksCard = () => {
 
     const fetchMenuItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/drink');
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/drink`);
             const data = await response.json();
             setMenuItems(data);
         } catch (error) {
@@ -40,7 +40,7 @@ const DrinksCard = () => {
         e.preventDefault();
         const descriptionArray = newFood.description.split(',').map(desc => desc.trim());
         try {
-            await fetch('http://localhost:5000/drink', {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/drink`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const DrinksCard = () => {
 
     const deleteFood = async (id) => {
         try {
-            await fetch(`http://localhost:5000/drink/${id}`, {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/drink/${id}`, {
                 method: 'DELETE',
             });
             fetchMenuItems();
@@ -77,7 +77,7 @@ const DrinksCard = () => {
     const updateFood = async (e) => {
         e.preventDefault();
         try {
-            await fetch(`http://localhost:5000/drink/${selectedFood._id}`, {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/drink/${selectedFood._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
