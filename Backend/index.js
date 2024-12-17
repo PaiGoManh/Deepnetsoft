@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('dotenv').config(); 
+
 
 const foodRoutes = require('./Routes/foodRoutes')
 const bunchRoutes = require('./Routes/brunchRoutes')
@@ -20,7 +22,7 @@ app.use('/drink', drinkRoutes);
 
 
 
-mongoose.connect('mongodb://localhost:27017/Deepnetsoft',)
+mongoose.connect(process.env.MONGO_URI,)
     .then(() => console.log('MongoDB Connected'))
     .catch((err) => console.log('Error connecting to MongoDB:', err));
 
