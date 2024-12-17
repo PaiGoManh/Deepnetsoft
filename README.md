@@ -1,3 +1,7 @@
+You guys can see the deployed project in here 
+
+https://deepnetsoft-assesment-two.vercel.app/
+
 clone the repository 
 
 change directory to Frontend 
